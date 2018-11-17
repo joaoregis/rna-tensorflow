@@ -12,8 +12,8 @@ fashion_mnist = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
 # Classes de roupas/ sapatos que a rede neural deve reconhecer
-class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
-               'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+class_names = ['T-shirt', 'Calça', 'Pulôver', 'Vestido', 'Casaco'
+               'Sandália', 'Camisa', 'Sapatilha', 'Bolsa', 'Bota']
 
 # Essa linha transforma todos os pixels das imagens em
 # valores entre 0.0 e 1.0 sem perder a característica
@@ -27,6 +27,8 @@ test_images = test_images / 255.0
 #   a posição no vetor de class names
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
+    keras.layers.Dense(128, activation=tf.nn.relu),
+    keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(10, activation=tf.nn.softmax)
 ])
@@ -42,9 +44,6 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
 
 # Esta é a etapa do treino, é aqui ohnde passamos o dataset
 # para treinar e as labels esperadas
-
-# [ EXPLICAR AQUI COMO O TENSORFLOW SABE A SAÍDA ESPERADA ]
-
 model.fit(train_images, train_labels, epochs = 5)
 
 # Recuperando a taxa de loss e a precisão do nosso modelo

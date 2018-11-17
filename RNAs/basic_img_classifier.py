@@ -42,9 +42,9 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-# Esta é a etapa do treino, é aqui ohnde passamos o dataset
+# Esta é a etapa do treino, é aqui onde passamos o dataset
 # para treinar e as labels esperadas
-model.fit(train_images, train_labels, epochs = 5)
+model.fit(train_images, train_labels, epochs = 500)
 
 # Recuperando a taxa de loss e a precisão do nosso modelo
 # através de um outro dataset para teste

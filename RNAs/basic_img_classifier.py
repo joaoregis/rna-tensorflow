@@ -22,7 +22,7 @@ test_images = test_images / 255.0
 
 # Criando modelo da rede neural com:
 # - 1 camada de entrada com (28 * 28) neurônios
-# - 1 camada escondida com 128 neurônios
+# - 3 camadas escondidas com 128 neurônios cada
 # - 1 camada de saída com 10 neurônios que representam
 #   a posição no vetor de class names
 model = keras.Sequential([

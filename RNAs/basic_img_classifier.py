@@ -30,7 +30,7 @@ model = keras.Sequential([
     keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(128, activation=tf.nn.relu),
-    keras.layers.Dense(10, activation=tf.nn.softmax)
+    keras.layers.Dense(10, activation=tf.nn.sigmoid)
 ])
 
 # Compilando a rede neural, ou seja, criando-a em memória
